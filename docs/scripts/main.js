@@ -1,1 +1,1 @@
-"use strict";var unicorn=document.getElementById("unicornMoving");unicorn.addEventListener("click",function(n){TweenMax.to(unicorn,2,{x:"+=200px"})});
+"use strict";var unicorn=document.getElementById("unicornMoving"),how_far=100,time=.5,play_sound=function(){new Audio("sounds/unicorn.mp3").play()};$("#unicornMoving").click(function(n){TweenMax.to(unicorn,time,{x:"+="+how_far+"px",onStart:play_sound})});
