@@ -71,6 +71,11 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe(gulp.dest('docs'));
 });
 
+gulp.task('mp3', () => {
+  return gulp.src('app/sounds/**/*.mp3')
+    .pipe(gulp.dest('docs/sounds'));
+});
+
 gulp.task('images', () => {
   return gulp.src('app/images/**/*')
     .pipe($.cache($.imagemin()))
@@ -166,7 +171,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('build', ['lint', 'html', 'mp3', 'images', 'fonts', 'extras'], () => {
   return gulp.src('docs/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
