@@ -102,6 +102,7 @@ gulp.task('clean', del.bind(null, ['.tmp', 'docs']));
 gulp.task('serve', () => {
   runSequence(['clean', 'wiredep'], ['styles', 'scripts', 'fonts'], () => {
     browserSync.init({
+      open: false,
       notify: false,
       port: 9000,
       server: {
@@ -113,7 +114,9 @@ gulp.task('serve', () => {
     });
 
     gulp.watch([
-      'app/*.html',
+      'app/**/*.html',
+      'app/**/*.js',
+      'app/**/*.css',
       'app/images/**/*',
       '.tmp/fonts/**/*'
     ]).on('change', reload);

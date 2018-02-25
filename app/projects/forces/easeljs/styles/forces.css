@@ -1,0 +1,10 @@
+.canvas-container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+#forcesCanvas {
+  width: 100%;
+  background-color: #87CEFA;
+}
