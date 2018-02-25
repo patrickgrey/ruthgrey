@@ -11,7 +11,8 @@ function init() {
   acft.image.onload = function() {
     stage.addChild(acft);
     acft.regY = 100;
-    acft.scale = 0.5;
+    acft.scaleY = 0.35;
+    acft.scaleX = -0.35;
     acft.x = (stage.canvas.width - acft.image.width * acft.scaleX) / 2;
     acft.y = (stage.canvas.height - acft.image.height * acft.scaleY) / 2;
   };
