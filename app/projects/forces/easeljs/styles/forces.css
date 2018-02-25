@@ -7,7 +7,9 @@
   background-color: #87CEFA;
 }
 
-#lift, #gravity, #drag, #thrust {
+/* The below should be in a media query for larger screens. On mobile first, the buttons should be below the interaction - would this work? Or should the arrows be the buttons? */
+
+/* #lift, #gravity, #drag, #thrust {
   position: absolute;
   margin: 0;
 }
@@ -30,4 +32,4 @@
 #thrust {
   right: 15px;
   top: calc(50% - 40px);
-}
+} */
