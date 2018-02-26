@@ -1,8 +1,6 @@
 var stage;
-// var container;
 
 function init() {
-//   console.log("hi there");
   stage = new createjs.Stage("forcesCanvas");
   createjs.Ticker.addEventListener("tick", stage);
   createjs.Touch.enable(stage);
@@ -22,12 +20,12 @@ function init() {
   // container.x = 100;
   // container.y = 100;
   // stage.update();
-  window.addEventListener("resize", handleResize);
-  handleResize(); // First draw
-  
+  // window.addEventListener("resize", stage.update);
+  // handleResize(); // First draw
 }
 
-
+// https://github.com/CreateJS/EaselJS/blob/master/examples/ButtonHelper.html
+// https://github.com/CreateJS/EaselJS/blob/master/_assets/art/VectorButton.js
 
 
 
