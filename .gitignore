@@ -1,5 +1,5 @@
-node_modules
-.tmp
-bower_components
-test/bower_components
-docs
+_site/
+node_modules/
+package-lock.json
+*.env
+.cache

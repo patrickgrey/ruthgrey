@@ -1,0 +1,17 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Home
+  order: 1
+---
+
+{% if cloudinary.total_count < 1 %}
+No images here :-( Soz.
+{% else %}
+We have images!!!
+  {% for image in cloudinary.resources | reverse %}
+    <img src="{{ image.secure_url }}" />
+  {% endfor %}
+{% endif %}
+
+
