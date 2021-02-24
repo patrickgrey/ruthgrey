@@ -1,20 +1,20 @@
 {
   "title": "Ruth Grey: Portfolio",
-  "url": "https://example.com/",
-  "description": "I am writing about my experiences as a naval navel-gazer.",
+  "url": "https://ruthgrey.co.uk/",
+  "description": "A portfolio of digital and 'real life' art I have created.",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "A portfolio of digital and 'real life' art I have created.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
-    "id": "https://example.com/"
+    "id": "https://ruthgrey.co.uk/"
   },
   "jsonfeed": {
     "path": "/feed/feed.json",
-    "url": "https://example.com/feed/feed.json"
+    "url": "https://ruthgrey.co.uk/feed/feed.json"
   },
   "author": {
-    "name": "Your Name Here",
-    "email": "youremailaddress@example.com",
-    "url": "https://example.com/about-me/"
+    "name": "Patrick Grey",
+    "email": "websemantic@yahoo.co.uk.co.uk",
+    "url": "https://risingsky.co.uk"
   }
 }

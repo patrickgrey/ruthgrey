@@ -4,14 +4,18 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
+<p>{{ metadata.description }}</p>
 
-{% if cloudinary.total_count < 1 %}
-No images here :-( Soz.
-{% else %}
-We have images!!!
-  {% for image in cloudinary.resources | reverse %}
-    <img src="{{ image.secure_url }}" />
-  {% endfor %}
-{% endif %}
+<div class="rp-gallery">
 
+  {% if cloudinary.total_count < 1 %}
 
+  <p class="rp-houston">Housten, we have a problem! Honestly, I've done at least one art but technical issues mean the computer says no! Sorry :-(</p>
+
+  {% else %}
+    {% for image in cloudinary.resources | reverse %}
+      <img src="{{ image.secure_url }}" />
+    {% endfor %}
+  {% endif %}
+
+</div>
