@@ -2,10 +2,12 @@ const {AssetCache} = require("@11ty/eleventy-cache-assets");
 const cloudinary = require('cloudinary').v2;
 require('dotenv').config();
 
+const cloudinaryFolderName = "ruth-portfolio";
+
 async function getImages() {
   const imageResult = cloudinary.search
-  .expression('folder:ruth-portfolio')
-  .sort_by('public_id','desc')
+  .expression(`folder:${cloudinaryFolderName}`)
+  .sort_by('uploaded_at','desc')
   .max_results(30)
   .execute().then(function(result, error){
     console.table(result);
@@ -37,6 +39,7 @@ module.exports = async function() {
 
   try {
     let ruthImages = await getImages();
+    console.log("Got images");
     // MUST CREATE .cache folder before running or will error.
     asset.save(ruthImages, "json");
     return ruthImages;

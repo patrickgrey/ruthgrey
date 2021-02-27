@@ -366,16 +366,27 @@ nav > ul > li:not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.rp-gallery img {
-  background-color: white;
-  padding: 0.5rem;
+.rp-gallery {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-rows: masonry;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 2rem;
 }
 
-@media (min-width: 720px) {
-  .rp-gallery img {
-    padding: 1rem;
-  }
+.rp-gallery img {
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 0 0.5rem white;
+  /* background-color: #666;
+  padding: 1px; */
 }
+
+/* @media (min-width: 720px) {
+  .rp-gallery img {
+    padding: 0.5rem;
+  }
+} */
 
 /* 
 * 

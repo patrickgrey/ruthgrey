@@ -14,8 +14,44 @@ eleventyNavigation:
 
   {% else %}
     {% for image in cloudinary.resources | reverse %}
-      <img src="{{ image.secure_url }}" />
+      {% if image.resource_type === "image" %}
+        <picture>
+
+          <source type="image/avif" 
+            srcset="https://res.cloudinary.com/dwhxvo4kw/image/upload/f_avif,q_auto,w_600/ruth-portfolio/{{ image.filename }}.avif 600w, https://res.cloudinary.com/dwhxvo4kw/image/upload/f_avif,q_auto,w_1200/ruth-portfolio/{{ image.filename }}.avif 1200w" 
+            sizes="(min-width: 60rem) 80vw, (min-width: 40rem) 90vw, 100vw">
+            
+          <source type="image/webp" 
+            srcset="https://res.cloudinary.com/dwhxvo4kw/image/upload/q_auto,w_600/ruth-portfolio/{{ image.filename }}.webp 600w, https://res.cloudinary.com/dwhxvo4kw/image/upload/q_auto,w_1200/ruth-portfolio/{{ image.filename }}.webp 1200w" 
+            sizes="(min-width: 60rem) 80vw, (min-width: 40rem) 90vw, 100vw">
+            
+          <source type="image/jpeg"
+            srcset="https://res.cloudinary.com/dwhxvo4kw/image/upload/q_auto,w_600/ruth-portfolio/{{ image.filename }}.jpeg 600w, https://res.cloudinary.com/dwhxvo4kw/image/upload/q_auto,w_1200/ruth-portfolio/{{ image.filename }}.jpeg 1200w" 
+            sizes="(min-width: 60rem) 80vw, (min-width: 40rem) 90vw, 100vw">
+            
+            <img alt="A bomb ass nebula" loading="lazy" decoding="async" src="https://res.cloudinary.com/dwhxvo4kw/image/upload/c_scale,w_600/ruth-portfolio/{{ image.filename }}.jpeg" width="600">
+
+        </picture>
+      {% endif %}
     {% endfor %}
   {% endif %}
 
 </div>
+
+{# <picture>
+
+<source type="image/avif" 
+  srcset="https://res.cloudinary.com/dwhxvo4kw/image/upload/f_avif,q_auto,w_600/ruth-portfolio/{{ image.filename }}.avif 600w, https://res.cloudinary.com/dwhxvo4kw/image/upload/f_avif,q_auto,w_1200/ruth-portfolio/{{ image.filename }}.avif 1200w, https://res.cloudinary.com/dwhxvo4kw/image/upload/f_avif,q_auto,w_1800/ruth-portfolio/{{ image.filename }}.avif 1800w" 
+  sizes="(min-width: 60rem) 80vw, (min-width: 40rem) 90vw, 100vw">
+  
+<source type="image/webp" 
+  srcset="https://res.cloudinary.com/dwhxvo4kw/image/upload/q_auto,w_600/ruth-portfolio/{{ image.filename }}.webp 600w, https://res.cloudinary.com/dwhxvo4kw/image/upload/q_auto,w_1200/ruth-portfolio/{{ image.filename }}.webp 1200w, https://res.cloudinary.com/dwhxvo4kw/image/upload/q_auto,w_1800/ruth-portfolio/{{ image.filename }}.webp 1800w" 
+  sizes="(min-width: 60rem) 80vw, (min-width: 40rem) 90vw, 100vw">
+  
+<source type="image/jpeg"
+  srcset="https://res.cloudinary.com/dwhxvo4kw/image/upload/q_auto,w_600/ruth-portfolio/{{ image.filename }}.jpeg 600w, https://res.cloudinary.com/dwhxvo4kw/image/upload/q_auto,w_1200/ruth-portfolio/{{ image.filename }}.jpeg 1200w, https://res.cloudinary.com/dwhxvo4kw/image/upload/q_auto,w_1800/ruth-portfolio/{{ image.filename }}.jpeg 1800w" 
+  sizes="(min-width: 60rem) 80vw, (min-width: 40rem) 90vw, 100vw">
+  
+  <img alt="A bomb ass nebula" loading="lazy" decoding="async" src="https://res.cloudinary.com/dwhxvo4kw/image/upload/c_scale,w_600/ruth-portfolio/{{ image.filename }}.jpeg" width="600">
+
+</picture> #}
