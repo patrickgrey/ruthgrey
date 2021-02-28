@@ -15,8 +15,9 @@ eleventyNavigation:
   {% else %}
     {% for image in cloudinary.resources | reverse %}
       {% if image.resource_type === "image" %}
-        <picture>
 
+      <a href="https://res.cloudinary.com/dwhxvo4kw/image/upload/c_scale,w_1024/ruth-portfolio/{{ image.filename }}.jpeg" class="lightbox">
+        <picture>
           <source type="image/avif" 
             srcset="https://res.cloudinary.com/dwhxvo4kw/image/upload/f_avif,q_auto,w_600/ruth-portfolio/{{ image.filename }}.avif 600w, https://res.cloudinary.com/dwhxvo4kw/image/upload/f_avif,q_auto,w_1200/ruth-portfolio/{{ image.filename }}.avif 1200w" 
             sizes="(min-width: 60rem) 80vw, (min-width: 40rem) 90vw, 100vw">
@@ -29,9 +30,10 @@ eleventyNavigation:
             srcset="https://res.cloudinary.com/dwhxvo4kw/image/upload/q_auto,w_600/ruth-portfolio/{{ image.filename }}.jpeg 600w, https://res.cloudinary.com/dwhxvo4kw/image/upload/q_auto,w_1200/ruth-portfolio/{{ image.filename }}.jpeg 1200w" 
             sizes="(min-width: 60rem) 80vw, (min-width: 40rem) 90vw, 100vw">
             
-            <img alt="A bomb ass nebula" loading="lazy" decoding="async" src="https://res.cloudinary.com/dwhxvo4kw/image/upload/c_scale,w_600/ruth-portfolio/{{ image.filename }}.jpeg" width="600">
+            <img alt="Ruth art" loading="lazy" decoding="async" src="https://res.cloudinary.com/dwhxvo4kw/image/upload/c_scale,w_600/ruth-portfolio/{{ image.filename }}.jpeg" width="600">
 
         </picture>
+      </a>
       {% endif %}
     {% endfor %}
   {% endif %}

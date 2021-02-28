@@ -378,7 +378,7 @@ nav > ul > li:not(:last-child) {
   background-color: white;
   border: 1px solid #ccc;
   box-shadow: 0 0 0 0.5rem white;
-  border-radius: 2px;
+  /* border-radius: 2px; */
   /* background-color: #666;
   padding: 1px; */
 }

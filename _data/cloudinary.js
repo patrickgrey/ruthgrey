@@ -8,10 +8,13 @@ async function getImages() {
   const imageResult = cloudinary.search
   .expression(`folder:${cloudinaryFolderName}`)
   .sort_by('uploaded_at','desc')
+  .with_field('context')
+  .with_field('metadata')
   .max_results(30)
   .execute().then(function(result, error){
-    console.table(result);
-    console.error(error);
+    // console.log(result.context);
+    // console.table(result);
+    // console.error(error);
     if (error) return error;
     return result;
   });
@@ -28,20 +31,20 @@ module.exports = async function() {
   });
 
   // Unique cache key required.
-  let asset = new AssetCache("ruth-portfolio");
+  // let asset = new AssetCache("ruth-portfolio");
 
-  // check if the cache is fresh within the last day
-  if(asset.isCacheValid("1d")) {
-    // return cached data.
-    console.log("********* Returning cached assets. ************");
-    return asset.getCachedValue(); // a promise
-  }
+  // // check if the cache is fresh within the last day
+  // if(asset.isCacheValid("1d")) {
+  //   // return cached data.
+  //   console.log("********* Returning cached assets. ************");
+  //   return asset.getCachedValue(); // a promise
+  // }
 
   try {
     let ruthImages = await getImages();
     console.log("Got images");
     // MUST CREATE .cache folder before running or will error.
-    asset.save(ruthImages, "json");
+    // asset.save(ruthImages, "json");
     return ruthImages;
   } catch (err) {
     // Fail gracefully
