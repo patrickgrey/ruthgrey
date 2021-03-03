@@ -316,6 +316,11 @@ h1 span:nth-child(2) {
   line-height: 5rem;
 }
 
+h1 span:nth-child(1)::selection {
+  background: #000;
+  color: rgba(255, 255, 255, 0.99);
+}
+
 h1 span:nth-child(2) {
   background-color: #363636;
   color: white;
@@ -383,14 +388,46 @@ nav > ul > li:not(:last-child) {
   padding: 1px; */
 }
 
-/* @media (min-width: 720px) {
-  .rp-gallery img {
-    padding: 0.5rem;
-  }
-} */
+.rp-photo-title,
+.rp-photo-description,
+.rp-photo-title:hover,
+.rp-photo-description:hover,
+.rp-photo-title:visited,
+.rp-photo-description:visited {
+  color: white;
+  display: block;
+}
+
+.rp-photo-title {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+a:hover .rp-photo-title {
+  text-decoration: none;
+}
 
 /* 
 * 
 * END Custom for site
+*
+*/
+
+/* 
+* 
+* Lightbox customise
+*
+*/
+
+:root {
+  --lightbox-background: rgba(0, 0, 0, 0.88);
+}
+
+/* 
+* 
+* END Lightbox customise
 *
 */
