@@ -374,18 +374,20 @@ nav > ul > li:not(:last-child) {
 .rp-gallery {
   display: grid;
   grid-template-rows: auto;
-  grid-template-rows: masonry;
+  /* grid-template-rows: masonry; */
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   gap: 2rem;
+}
+
+.rp-gallery .lightbox {
+  text-decoration: none;
+  /* background-color: #363636; */
 }
 
 .rp-gallery img {
   background-color: white;
   border: 1px solid #ccc;
   box-shadow: 0 0 0 0.5rem white;
-  /* border-radius: 2px; */
-  /* background-color: #666;
-  padding: 1px; */
 }
 
 .rp-photo-title,
@@ -395,19 +397,29 @@ nav > ul > li:not(:last-child) {
 .rp-photo-title:visited,
 .rp-photo-description:visited {
   color: white;
-  display: block;
+  display: inline-block;
 }
 
 .rp-photo-title {
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
     helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
   margin-top: 1rem;
+  /* margin-bottom: 2rem; */
   font-weight: bold;
   text-decoration: underline;
 }
 
 a:hover .rp-photo-title {
   text-decoration: none;
+}
+
+a .rp-photo-description,
+a:visited .rp-photo-description,
+a:hover .rp-photo-description {
+  text-decoration: none;
+  background-color: #363636;
+  padding: 0 0.5rem;
+  margin-top: 0.25rem;
 }
 
 /* 
