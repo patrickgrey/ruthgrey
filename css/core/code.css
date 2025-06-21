@@ -1,0 +1,45 @@
+/**
+ * @section Code
+ */
+
+@layer kelp.core {
+
+	code,
+	kbd,
+	pre,
+	samp {
+		font-family: var(--font-monospace);
+		font-size: var(--font-size-code);
+	}
+
+	code {
+		color: var(--color-text-code);
+		word-wrap: break-word;
+	}
+
+	pre {
+		background-color: var(--color-code-fill);
+		border: 1px solid var(--color-code-border);
+		border-radius: var(--border-radius-s);
+		color: var(--color-code-on);
+		display: block;
+		line-height: var(--line-height-m);
+		overflow: auto;
+		padding: var(--size-xs);
+		tab-size: 2;
+		white-space: pre-wrap;
+		word-break: break-all;
+	}
+
+	@media (min-width: 38rem) {
+		pre {
+			tab-size: 4;
+		}
+	}
+
+	pre code {
+		color: inherit;
+		font-size: 1em;
+	}
+
+}

@@ -1,0 +1,20 @@
+/**
+ * @section Alignment
+ * Adjust the alignment on the secondary axis in flexbox and grid layouts
+ */
+
+@layer kelp.utilities {
+
+	.align-start {
+		align-items: start;
+	}
+
+	.align-end {
+		align-items: end;
+	}
+
+	.align-center {
+		align-items: center;
+	}
+
+}

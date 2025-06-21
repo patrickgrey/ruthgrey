@@ -1,0 +1,34 @@
+/**
+ * @section Sidecar
+ * Side-by-side content
+ */
+
+@layer kelp.layout {
+
+	[class*="sidecar"] > * {
+		margin: 0;
+	}
+
+	[class*="sidecar"] {
+		--gap: var(--size-m);
+		--main-size: initial;
+		--secondary-size: initial;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--gap);
+	}
+
+	.sidecar > :first-child,
+	.sidecar-end > :last-child {
+		flex-basis: var(--secondary-size, auto);
+		flex-grow: 1;
+	}
+
+	.sidecar > :last-child,
+	.sidecar-end > :first-child {
+		flex-basis: 0;
+		flex-grow: 999;
+		min-inline-size: var(--main-size, 50%);
+	}
+
+}

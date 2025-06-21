@@ -1,0 +1,25 @@
+/**
+ * @section Callouts
+ * Used for alert and callout content
+ */
+
+@layer kelp.core {
+
+	.callout {
+		--background-color: var(--color-fill-muted);
+		--color: var(--color-on-muted);
+		--border-color: var(--color-border-muted);
+
+		background-color: var(--background-color);
+		border: 1px solid var(--border-color);
+		border-radius: var(--border-radius-m);
+		color: var(--color);
+		margin-block-end: var(--size-5xs);
+		padding: var(--size-xs);
+	}
+
+	.callout:not(.outline, .vivid) {
+		color: var(--color-text-normal);
+	}
+
+}

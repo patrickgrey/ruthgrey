@@ -1,0 +1,19 @@
+/**
+ * @section Stack
+ * Stack content on top of each other and control spacing
+ */
+
+@layer kelp.layout {
+
+	.stack > * {
+		margin: 0;
+	}
+
+	.stack {
+		--gap: var(--size-m);
+		display: flex;
+		flex-direction: column;
+		gap: var(--gap);
+	}
+
+}
